@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GluonApp.iml" filepath="$PROJECT_DIR$/GluonApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_android.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_android.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_desktop.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_embedded.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_embedded.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_ios.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_ios.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_main.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/GluonMobile-SingleViewProjectApp/GluonMobile-SingleViewProjectApp_test.iml" group="GluonMobile-SingleViewProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Проектный практикум-GluonApp.iml" filepath="$PROJECT_DIR$/.idea/modules/Проектный практикум-GluonApp.iml" />
+    </modules>
+  </component>
+</project>
