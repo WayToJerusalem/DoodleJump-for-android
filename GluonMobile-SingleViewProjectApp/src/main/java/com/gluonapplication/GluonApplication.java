@@ -4,6 +4,7 @@ import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -59,10 +60,12 @@ public class GluonApplication extends MobileApplication {
     Text scoreText = new Text();
     Text gameoverText = new Text();
     public boolean checkPlayerPos;
-
+    Button left = new Button();
+    Button right = new Button();
+    ImageView background;
 
     private void initContent(){
-        ImageView background = new ImageView(backgroundImg);
+        background = new ImageView(backgroundImg);
         background.setFitHeight(700);
         background.setFitWidth(450);
         int shift = 650;
@@ -102,8 +105,15 @@ public class GluonApplication extends MobileApplication {
             }
         });
 
+        left.setText("L");
+        left.setTranslateX(0);
+        left.setTranslateY(0);
+        right.setText("R");
+        left.setTranslateX(200);
+        left.setTranslateY(0);
+
         gameRoot.getChildren().add(player);
-        appRoot.getChildren().addAll(background, gameRoot);
+        appRoot.getChildren().addAll(background, gameRoot,left,right);
     }
 
     private void update(){
@@ -116,10 +126,10 @@ public class GluonApplication extends MobileApplication {
             scoreText.setTranslateY(300);
             scoreText.setTranslateX(200);
             if(soundOff == false){
-                new Sound("/sounds/fall.wav");
+                //new Sound("/sounds/fall.wav");
                 soundOff=true;
             }
-            if(isPressed(KeyCode.SPACE)){
+            if(gameRoot.isPressed()/*isPressed(KeyCode.SPACE)*/){
                 restart();
             }
         }
@@ -164,11 +174,11 @@ public class GluonApplication extends MobileApplication {
             player.jumpPlayer();
             player.setCanJump(false);
         }
-        if(isPressed(KeyCode.LEFT)){
+        if(left.isPressed()/*isPressed(KeyCode.LEFT)*/){
             player.setScaleX(-1);
             player.moveX(-7);
         }
-        if(isPressed(KeyCode.RIGHT)){
+        if(right.isPressed()/*isPressed(KeyCode.RIGHT)*/){
             player.setScaleX(1);
             player.moveX(7);
         }
@@ -185,9 +195,10 @@ public class GluonApplication extends MobileApplication {
         GluonApplication.score = 0;
         gameRoot.getChildren().remove(gameoverText);
         gameRoot.getChildren().clear();
-        appRoot.getChildren().removeAll(gameRoot);
-        gameRoot.getChildren().clear();
-
+        appRoot.getChildren().clear();
+        //appRoot.getChildren().removeAll(gameRoot,background);
+        //gameRoot.getChildren().clear();
+        //gameRoot.getChildren().removeAll(left,right);
         initContent();
     }
 
