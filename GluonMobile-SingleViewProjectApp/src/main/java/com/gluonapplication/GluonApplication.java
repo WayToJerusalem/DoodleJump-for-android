@@ -27,7 +27,7 @@ public class GluonApplication extends MobileApplication {
 
     @Override
     public void postInit(Scene scene) {
-        Swatch.BLUE.assignTo(scene);
+        //Swatch.BLUE.assignTo(scene);
 
         ((Stage) scene.getWindow()).getIcons().add(new Image(GluonApplication.class.getResourceAsStream("/icon.png")));
         initContent();
@@ -86,7 +86,7 @@ public class GluonApplication extends MobileApplication {
     public void addCharacters(ImageView background) {
         player = new Character(0);
         player.setTranslateX(185);
-        player.setTranslateY(650);
+        player.setTranslateY(550);
         player.translateYProperty().addListener((obs,old,newValue)->{
             checkPlayerPos = false;
             if(player.getTranslateY()<300){
@@ -105,15 +105,15 @@ public class GluonApplication extends MobileApplication {
             }
         });
 
+        right.setText("R");
+        right.setTranslateX(280);
+        right.setTranslateY(515);
         left.setText("L");
         left.setTranslateX(0);
-        left.setTranslateY(0);
-        right.setText("R");
-        left.setTranslateX(200);
-        left.setTranslateY(0);
+        left.setTranslateY(515);
 
         gameRoot.getChildren().add(player);
-        appRoot.getChildren().addAll(background, gameRoot,left,right);
+        appRoot.getChildren().addAll(background, gameRoot,right,left);
     }
 
     private void update(){
@@ -190,7 +190,7 @@ public class GluonApplication extends MobileApplication {
 
     public void restart(){
         platforms.clear();
-        soundOff=false;
+        soundOff = false;
         keys.clear();
         GluonApplication.score = 0;
         gameRoot.getChildren().remove(gameoverText);

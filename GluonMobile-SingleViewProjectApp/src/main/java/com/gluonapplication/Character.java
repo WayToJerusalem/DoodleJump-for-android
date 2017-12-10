@@ -53,7 +53,7 @@ public class Character extends Pane{
 
     public boolean ifFalls(){
         boolean falls = false;
-        if(this.getTranslateY()>700){
+        if(this.getTranslateY()>600){
             falls = true;
         }
 
