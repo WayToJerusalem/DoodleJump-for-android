@@ -66,8 +66,8 @@ public class GluonApplication extends MobileApplication {
 
     private void initContent(){
         background = new ImageView(backgroundImg);
-        background.setFitHeight(700);
-        background.setFitWidth(450);
+        background.setFitHeight(gameRoot.getHeight());
+        background.setFitWidth(gameRoot.getWidth());
         int shift = 650;
         int min = 130;
         int max = 160;
