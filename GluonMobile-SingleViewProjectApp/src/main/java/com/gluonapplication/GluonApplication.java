@@ -66,8 +66,8 @@ public class GluonApplication extends MobileApplication {
 
     private void initContent(){
         background = new ImageView(backgroundImg);
-        background.setFitHeight(gameRoot.getHeight());
-        background.setFitWidth(gameRoot.getWidth());
+        background.setFitWidth(appRoot.getWidth());
+        background.setFitHeight(appRoot.getHeight());
         int shift = 650;
         int min = 130;
         int max = 160;
@@ -106,11 +106,15 @@ public class GluonApplication extends MobileApplication {
         });
 
         right.setText("R");
-        right.setTranslateX(280);
-        right.setTranslateY(515);
+        right.setTranslateX(240);
+        right.setTranslateY(480);
+        right.setPrefWidth(100);
+        right.setPrefHeight(70);
         left.setText("L");
         left.setTranslateX(0);
-        left.setTranslateY(515);
+        left.setTranslateY(480);
+        left.setPrefWidth(100);
+        left.setPrefHeight(70);
 
         gameRoot.getChildren().add(player);
         appRoot.getChildren().addAll(background, gameRoot,right,left);
