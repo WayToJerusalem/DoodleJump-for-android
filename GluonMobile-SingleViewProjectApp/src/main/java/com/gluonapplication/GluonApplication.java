@@ -22,14 +22,13 @@ public class GluonApplication extends MobileApplication {
     @Override
     public void init() {
         addViewFactory(BASIC_VIEW, () -> new BasicView(BASIC_VIEW));
-        //initContent();
     }
 
     @Override
     public void postInit(Scene scene) {
         //Swatch.BLUE.assignTo(scene);
 
-        ((Stage) scene.getWindow()).getIcons().add(new Image(GluonApplication.class.getResourceAsStream("/icon.png")));
+        ((Stage) scene.getWindow()).getIcons().add(new Image(GluonApplication.class.getResourceAsStream("/doodle.png")));
         initContent();
 
         scene.setOnKeyPressed(event-> keys.put(event.getCode(), true));
@@ -66,8 +65,7 @@ public class GluonApplication extends MobileApplication {
 
     private void initContent(){
         background = new ImageView(backgroundImg);
-        background.setFitWidth(appRoot.getWidth());
-        background.setFitHeight(appRoot.getHeight());
+
         int shift = 650;
         int min = 130;
         int max = 160;
@@ -93,7 +91,7 @@ public class GluonApplication extends MobileApplication {
                 checkPlayerPos = true;
                 for(Platform platform : GluonApplication.platforms){
                     platform.setTranslateY(platform.getTranslateY()+0.5);
-                    if(platform.getTranslateY()==701){
+                    if(platform.getTranslateY()==appRoot.getHeight()){
                         if (platform.id == 2){
                             platform.brownPlatform();
                             platform.setDestroyOnce(false);
@@ -106,15 +104,18 @@ public class GluonApplication extends MobileApplication {
         });
 
         right.setText("R");
-        right.setTranslateX(240);
-        right.setTranslateY(480);
+        right.setTranslateX(265);
+        right.setTranslateY(490);
         right.setPrefWidth(100);
         right.setPrefHeight(70);
         left.setText("L");
         left.setTranslateX(0);
-        left.setTranslateY(480);
+        left.setTranslateY(490);
         left.setPrefWidth(100);
         left.setPrefHeight(70);
+
+        background.setFitWidth(appRoot.getWidth());
+        background.setFitHeight(appRoot.getHeight());
 
         gameRoot.getChildren().add(player);
         appRoot.getChildren().addAll(background, gameRoot,right,left);
@@ -126,9 +127,9 @@ public class GluonApplication extends MobileApplication {
         checkSide();
         if (player.ifFalls()){
             gameOverText();
-            gameoverText.setText("Game over! press 'Space' to restart");
-            scoreText.setTranslateY(300);
-            scoreText.setTranslateX(200);
+            gameoverText.setText("          Game over!\npress 'Space' to restart");
+            scoreText.setTranslateY(200);
+            scoreText.setTranslateX(160);
             if(soundOff == false){
                 //new Sound("/sounds/fall.wav");
                 soundOff=true;
@@ -143,11 +144,11 @@ public class GluonApplication extends MobileApplication {
 
         gameRoot.getChildren().remove(gameoverText);
         gameoverText.setText(null);
-        gameoverText.setTranslateX(150);
-        gameoverText.setTranslateY(330);
+        gameoverText.setTranslateX(120);
+        gameoverText.setTranslateY(300);
 
-        gameoverText.setScaleX(2);
-        gameoverText.setScaleY(2);
+        gameoverText.setScaleX(1.5);
+        gameoverText.setScaleY(1.5);
         gameRoot.getChildren().add(gameoverText);
     }
 
