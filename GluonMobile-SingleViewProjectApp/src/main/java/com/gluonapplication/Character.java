@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 
 public class Character extends Pane{
 
-    Image doodleImg = new Image(getClass().getClassLoader().getResourceAsStream("images/doodler.png"));
+    Image doodleImg = new Image(getClass().getClassLoader().getResourceAsStream("images/doodler_santa.png"));
     ImageView imageView = new ImageView(doodleImg);
     public Point2D playerVelocity = new Point2D(0,0);
     private boolean canJump = true;
