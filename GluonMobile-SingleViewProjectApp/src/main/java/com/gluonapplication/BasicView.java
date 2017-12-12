@@ -16,27 +16,8 @@ public class BasicView extends View {
 
     public BasicView(String name) {
         super(name);
-        
-        /*Label label = new Label("Hello JavaFX World!");
-
-        Button button = new Button("Change the World!");
-        button.setGraphic(new Icon(MaterialDesignIcon.LANGUAGE));
-        button.setOnAction(e -> label.setText("Hello JavaFX Universe!"));
-        
-        VBox controls = new VBox(15.0, label, button);
-        controls.setAlignment(Pos.CENTER);
-
-        setCenter(controls);*/
         setCenter(appRoot);
 
-
-       /* scene.setOnKeyPressed(event-> keys.put(event.getCode(), true));
-        scene.setOnKeyReleased(event -> {
-            keys.put(event.getCode(), false);
-        });
-        //primaryStage.setTitle("Doodle Jump");
-        //primaryStage.setScene(scene);
-        //primaryStage.show();*/
     }
 
     @Override

@@ -50,7 +50,7 @@ public class GluonApplication extends MobileApplication {
 
     Image backgroundImg = new Image(getClass().getResourceAsStream("/images/background2.png"));
 
-    public static final int BLOCK_SIZE = 68;
+    public static final int BLOCK_SIZE = 45;
 
     public static Pane appRoot = new Pane();
     public static Pane gameRoot = new Pane();
@@ -67,16 +67,16 @@ public class GluonApplication extends MobileApplication {
         background = new ImageView(backgroundImg);
 
         int shift = 650;
-        int min = 130;
+        int min = 110;
         int max = 160;
-        for (int i = 0; i < 8; i++) { //Зеленые платформы
+        for (int i = 0; i < 6; i++) { //Зеленые платформы
             shift-=min+(int)(Math.random()*((max-min)+1));
-            platforms.add(new Platform(1,(int)(Math.random()*5*BLOCK_SIZE),shift));
+            platforms.add(new Platform(1,(int)(Math.random()*BLOCK_SIZE),shift));
         }
-        for (int i = 0; i < 4; i++) { //Коричневые платформы
+        for (int i = 0; i < 3; i++) { //Коричневые платформы
 
             shift-=min+(int)(Math.random()*((max-min)+1));
-            platforms.add(new Platform(2,(int)(Math.random()*5*BLOCK_SIZE),shift));
+            platforms.add(new Platform(2,(int)(Math.random()*BLOCK_SIZE),shift));
         }
         addCharacters(background);
     }
@@ -85,13 +85,14 @@ public class GluonApplication extends MobileApplication {
         player = new Character(0);
         player.setTranslateX(185);
         player.setTranslateY(550);
+        double heightApp = appRoot.getHeight();
         player.translateYProperty().addListener((obs,old,newValue)->{
             checkPlayerPos = false;
             if(player.getTranslateY()<300){
                 checkPlayerPos = true;
                 for(Platform platform : GluonApplication.platforms){
                     platform.setTranslateY(platform.getTranslateY()+0.5);
-                    if(platform.getTranslateY()==appRoot.getHeight()){
+                    if(platform.getTranslateY()== heightApp){
                         if (platform.id == 2){
                             platform.brownPlatform();
                             platform.setDestroyOnce(false);
@@ -108,6 +109,7 @@ public class GluonApplication extends MobileApplication {
         right.setTranslateY(490);
         right.setPrefWidth(100);
         right.setPrefHeight(70);
+
         left.setText("L");
         left.setTranslateX(0);
         left.setTranslateY(490);
@@ -115,7 +117,7 @@ public class GluonApplication extends MobileApplication {
         left.setPrefHeight(70);
 
         background.setFitWidth(appRoot.getWidth());
-        background.setFitHeight(appRoot.getHeight());
+        background.setFitHeight(heightApp);
 
         gameRoot.getChildren().add(player);
         appRoot.getChildren().addAll(background, gameRoot,right,left);
