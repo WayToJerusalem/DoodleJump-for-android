@@ -65,7 +65,6 @@ public class Character extends Pane{
             playerVelocity = playerVelocity.add(0,-30);
             canJump = false;
         }
-
     }
 
     public void setCanJump(boolean canJump) {
