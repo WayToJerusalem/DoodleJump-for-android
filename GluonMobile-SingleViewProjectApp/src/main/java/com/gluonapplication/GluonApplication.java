@@ -106,21 +106,22 @@ public class GluonApplication extends MobileApplication {
 
         right.setText("R");
         right.setTranslateX(265);
-        right.setTranslateY(490);
+        right.setTranslateY(heightApp-right.getHeight());
         right.setPrefWidth(100);
         right.setPrefHeight(70);
 
         left.setText("L");
         left.setTranslateX(0);
-        left.setTranslateY(490);
+        left.setTranslateY(heightApp-left.getHeight());
         left.setPrefWidth(100);
         left.setPrefHeight(70);
 
-        background.setFitWidth(appRoot.getWidth());
-        background.setFitHeight(heightApp);
-
         gameRoot.getChildren().add(player);
+        background.setFitWidth(appRoot.getWidth());
+        background.setFitHeight(appRoot.getHeight());
+
         appRoot.getChildren().addAll(background, gameRoot,right,left);
+
     }
 
     private void update(){
