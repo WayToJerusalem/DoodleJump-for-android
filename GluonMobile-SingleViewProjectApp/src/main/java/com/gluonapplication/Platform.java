@@ -62,3 +62,5 @@ public class Platform extends Pane {
         this.destroyOnce = destroyOnce;
     }
 }
+
+
