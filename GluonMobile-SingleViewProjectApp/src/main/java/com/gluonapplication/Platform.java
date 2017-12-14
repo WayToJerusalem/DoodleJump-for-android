@@ -63,4 +63,3 @@ public class Platform extends Pane {
     }
 }
 
-
