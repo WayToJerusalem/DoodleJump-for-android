@@ -70,4 +70,6 @@ public class Character extends Pane{
     public void setCanJump(boolean canJump) {
         this.canJump = canJump;
     }
+
 }
+
